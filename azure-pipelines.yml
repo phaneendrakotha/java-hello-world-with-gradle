@@ -26,14 +26,20 @@ steps:
     key: 'cache-gradle'
     path: '$(System.DefaultWorkingDirectory)'
 
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'sonarcloud-ado'
+#     organization: 'phaneendrakotha'
+#     projectKey: 'demo-gradle'
+#     #scannerMode: 'Other'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud-ado'
     organization: 'phaneendrakotha'
-    projectKey: 'demo-gradle'
-    #scannerMode: 'Other'
-
-
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'demo-gradle'
+    cliSources: '.'
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
