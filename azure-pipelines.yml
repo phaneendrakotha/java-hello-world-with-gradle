@@ -50,7 +50,7 @@ steps:
       sonar.exclusions=*.java
       sonar.java.binaries=build/classes
       sonar.verbose=true
-      sonar.projectKey=demo-gradle
+      sonar.projectKey=java-hello-world-with-gradle
 
 
 - task: SonarCloudAnalyze@1
