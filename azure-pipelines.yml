@@ -26,12 +26,8 @@ steps:
     key: 'cache-gradle'
     path: '$(System.DefaultWorkingDirectory)'
 
-# - task: SonarCloudPrepare@1
-#   inputs:
-#     SonarCloud: 'sonarcloud-ado'
-#     organization: 'phaneendrakotha'
-#     projectKey: 'demo-gradle'
-#     #scannerMode: 'Other'
+
+
 # - task: SonarCloudPrepare@1
 #   inputs:
 #     SonarCloud: 'sonarcloud-ado'
@@ -40,23 +36,24 @@ steps:
 #     configMode: 'manual'
 #     cliProjectKey: 'demo-gradle'
 #     cliSources: '.'
-
-- task: SonarCloudPrepare@1
+#     extraProperties: |
+#       # Additional properties that will be passed to the scanner, 
+#       # Put one key=value per line, example:
+#        - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud-ado'
     organization: 'phaneendrakotha'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'demo-gradle'
-    cliSources: '.'
+    scannerMode: 'Other'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
-       sonar.exclusions=*.java
-       sonar.java.binaries=build/classes
-       sonar.verbos=true
-       sonar.projectKey='demo-gradle'
-       sonar.organization='phaneendrakotha'
+      sonar.exclusions=*.java
+      sonar.java.binaries=build/classes
+      sonar.verbose=true
+      sonar.projectKey=demo-gradle
+#        sonar.organization='phaneendrakotha'
+
+
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
