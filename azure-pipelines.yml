@@ -25,3 +25,11 @@ steps:
   inputs:
     key: 'cache-gradle'
     path: '$(System.DefaultWorkingDirectory)'
+
+
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'sonarcloud'
+    scannerMode: 'Other'
+    cliProjectKey: 
+- task: SonarQubeAnalyze@5
