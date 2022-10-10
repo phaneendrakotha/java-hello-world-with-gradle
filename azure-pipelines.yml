@@ -32,6 +32,15 @@ steps:
 #     organization: 'phaneendrakotha'
 #     projectKey: 'demo-gradle'
 #     #scannerMode: 'Other'
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'sonarcloud-ado'
+#     organization: 'phaneendrakotha'
+#     scannerMode: 'CLI'
+#     configMode: 'manual'
+#     cliProjectKey: 'demo-gradle'
+#     cliSources: '.'
+
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud-ado'
@@ -40,6 +49,10 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'demo-gradle'
     cliSources: '.'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+       sonar.exclusions=*.java
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
