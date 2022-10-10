@@ -53,6 +53,8 @@ steps:
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
        sonar.exclusions=*.java
+       sonar.java.binaries=build/classes
+       sonar.verbos=true
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
