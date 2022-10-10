@@ -51,7 +51,6 @@ steps:
       sonar.java.binaries=build/classes
       sonar.verbose=true
       sonar.projectKey=demo-gradle
-#        sonar.organization='phaneendrakotha'
 
 
 - task: SonarCloudAnalyze@1
