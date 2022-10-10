@@ -31,3 +31,6 @@ steps:
     SonarCloud: 'sonarcloud-ado'
     organization: 'phaneendrakotha'
     scannerMode: 'Other'
+
+
+- task: SonarCloudAnalyze@1
