@@ -43,7 +43,7 @@ steps:
   inputs:
     SonarCloud: 'sonarcloud-ado'
     organization: 'phaneendrakotha'
-    scannerMode: 'Other'
+    scannerMode: 'CLI'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
