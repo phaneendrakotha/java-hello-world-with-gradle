@@ -39,7 +39,7 @@ steps:
 #     extraProperties: |
 #       # Additional properties that will be passed to the scanner, 
 #       # Put one key=value per line, example:
-#        - task: SonarCloudPrepare@1
+- task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud-ado'
     organization: 'phaneendrakotha'
