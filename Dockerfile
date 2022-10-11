@@ -1,4 +1,4 @@
-FROM adoptopenjdk
+FROM library/adoptopenjdk
 
 WORKDIR /usr/app
 
