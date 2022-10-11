@@ -39,28 +39,28 @@ steps:
 #     extraProperties: |
 #       # Additional properties that will be passed to the scanner, 
 #       # Put one key=value per line, example:
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'sonarcloud-ado'
-    organization: 'phaneendrakotha'
-    scannerMode: 'CLI'
-    extraProperties: |
-      # Additional properties that will be passed to the scanner, 
-      # Put one key=value per line, example:
-      sonar.exclusions=*.java
-      sonar.java.binaries=build/classes
-      sonar.verbose=true
-      sonar.projectKey=java-hello-world-with-gradle
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'sonarcloud-ado'
+#     organization: 'phaneendrakotha'
+#     scannerMode: 'CLI'
+#     extraProperties: |
+#       # Additional properties that will be passed to the scanner, 
+#       # Put one key=value per line, example:
+#       sonar.exclusions=*.java
+#       sonar.java.binaries=build/classes
+#       sonar.verbose=true
+#       sonar.projectKey=java-hello-world-with-gradle
 
 
-- task: SonarCloudAnalyze@1
+# - task: SonarCloudAnalyze@1
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-
+# - task: SonarCloudPublish@1
+#   inputs:
+#     pollingTimeoutSec: '300'
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
-    command: 'buildAndPush'
+    repository: 'phaneendrakotha'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
