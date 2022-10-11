@@ -49,14 +49,10 @@ steps:
 # - task: SonarCloudPublish@1
 #   inputs:
 #     pollingTimeoutSec: '300'
+
+
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
-    command: 'login'
-    
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dockerhub-phaneendra'
-    repository: 'phaneendrakotha'
-    command: 'build'
+    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
