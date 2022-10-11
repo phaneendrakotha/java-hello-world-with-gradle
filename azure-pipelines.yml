@@ -51,7 +51,10 @@ steps:
 #   inputs:
 #     pollingTimeoutSec: '300'
 
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
     
 - task: Docker@2
   inputs:
@@ -67,8 +70,3 @@ steps:
 #     repository: 'phaneendrakotha'
 #     command: 'push'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
