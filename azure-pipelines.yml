@@ -60,9 +60,15 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
-- task: Docker@2
-  displayName: 'Push the Docker image'
+# - task: Docker@2
+#   displayName: 'Push the Docker image'
+#   inputs:
+#     containerRegistry: 'dockerhub-phaneendra'
+#     repository: 'phaneendrakotha'
+#     command: 'push'
+
+- task: PublishBuildArtifacts@1
   inputs:
-    containerRegistry: 'dockerhub-phaneendra'
-    repository: 'phaneendrakotha'
-    command: 'push'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
