@@ -55,7 +55,7 @@ steps:
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
     repository: 'demo-gradle'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
   
 
