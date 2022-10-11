@@ -51,15 +51,17 @@ steps:
 #   inputs:
 #     pollingTimeoutSec: '300'
 
+
+    
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
     repository: 'demo-gradle'
     command: 'build'
     Dockerfile: '**/Dockerfile'
-  
 
 - task: Docker@2
+  displayName: 'Push the Docker image'
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
     repository: 'phaneendrakotha'
