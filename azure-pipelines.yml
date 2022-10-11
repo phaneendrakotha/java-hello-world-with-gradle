@@ -54,5 +54,12 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerhub-phaneendra'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
+    
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub-phaneendra'
+    repository: 'phaneendrakotha'
+    command: 'push'
