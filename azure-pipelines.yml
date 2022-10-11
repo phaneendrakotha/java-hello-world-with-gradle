@@ -54,3 +54,9 @@ steps:
     containerRegistry: 'dockerhub-phaneendra'
     command: 'login'
     
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub-phaneendra'
+    repository: 'phaneendra'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
