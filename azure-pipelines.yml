@@ -12,7 +12,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 variables:
-   imageName: 'pipelines-demo-docker:$(Build.BuildId)' 
+   imageName: 'demo-gradle' 
 steps:
 - task: Gradle@2
   inputs:
